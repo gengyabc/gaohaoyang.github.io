@@ -1,0 +1,107 @@
+---
+layout: post
+title:  "2. Jenkins使用 -- 使用CLI"
+categories: 持续集成
+tags:  Jenkins
+author: Geng
+---
+
+* content
+{:toc}
+
+
+## 使用命令行界面CLI (command line interface)
+为啥放着图形界面不用，使用命令行界面呢？
+因为命令行界面：更简单，更快
+
+更重要的，适合远程操作，自动操作
+
+
+
+
+## 使用CLI
+### 进入CLI
+设置安全选项，`系统管理`->`Configure Global Security`
+
+![]({{ site.url }}/assets/images/posts/2017-02-02-use-CLI/config.png)
+
+确保选中 `随机选取`
+
+![]({{ site.url }}/assets/images/posts/2017-02-02-use-CLI/ram.png)
+
+保存设置
+
+进入网址：http://0.0.0.0:8080/cli/
+首先下载jenkins-cli.jar，然后运行
+```bash
+java -jar jenkins-cli.jar -s http://0.0.0.0:8080/ help
+```
+![]({{ site.url }}/assets/images/posts/2017-02-02-use-CLI/step1.png)
+
+提示需要passphrase，输入即可：
+```bash
+$ Enter passphrase for /Users/gengyu/.ssh/id_rsa:
+```
+如果不知道这些都是什么，参考下面部分 `设置秘钥对`
+
+### 设置秘钥对
+下面以mac系统为例说明。
+
+首先，terminal中输入下面命令查看是否具有秘钥对：
+```
+$ cd ~/.ssh
+$ ls
+```
+如果有此目录，并且具有`id_rsa.pub`文件，那么打开此文件，以备后用。
+
+如果没有此目录，那么
+```
+$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/name/.ssh/id_rsa): (直接回车)
+Created directory '/home/name/.ssh'.
+Enter passphrase (empty for no passphrase):(直接回车)
+Enter same passphrase again:(直接回车)
+Your identification has been saved in /home/name/.ssh/id_rsa.
+Your public key has been saved in /home/name/.ssh/id_rsa.pub.
+The key fingerprint is:
+```
+此时，将会建立你的秘钥对，打开`id_rsa.pub`文件，以备后用。
+
+### 设置SSH Public Keys
+页面右上角用户，点击出现下拉菜单，点击`设置`
+
+![]({{ site.url }}/assets/images/posts/2017-02-02-use-CLI/step2.png)
+
+页面下部，`SSH Public Keys`，有的话复制，没有的话填入你的公钥复制，然后粘贴到上述需要位置即可
+
+![]({{ site.url }}/assets/images/posts/2017-02-02-use-CLI/3.png)
+
+如此设置之后，因为我们passphrase设置为空，此处直接回车即可
+```bash
+$ Enter passphrase for /Users/gengyu/.ssh/id_rsa:
+```
+将会输出下列信息：
+```bash
+  add-job-to-view
+    Adds jobs to view.
+  build
+    Builds a job, and optionally waits until its completion.
+  cancel-quiet-down
+    Cancel the effect of the "quiet-down" command.
+    
+  ..... 此处省略一堆字
+  
+  wait-node-online
+    Wait for a node to become online.
+  who-am-i
+    Reports your credential and permissions.
+```
+自己试试这些命令，如果还是不知道怎么用，进入网址：http://0.0.0.0:8080/cli/
+比如想要尝试`who-am-i`命令，页面下部找到这个命令，点击
+
+![]({{ site.url }}/assets/images/posts/2017-02-02-use-CLI/who.png)
+
+下面第一行即为命令
+
+![]({{ site.url }}/assets/images/posts/2017-02-02-use-CLI/report.png)
