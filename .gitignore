@@ -5,6 +5,5 @@ _site
 .idea
 .DS_Store
 *.swp
-CNAME
 README.md
 README-zh-cn.md
