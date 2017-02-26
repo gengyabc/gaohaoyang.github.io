@@ -9,6 +9,15 @@ type: page
 * content
 {:toc}
 
+
+
+
+## Git和GitHub
+- [Git简单教程](http://www.runoob.com/w3cnote/git-guide.html)
+
+- [GitHub详细教程](http://www.cnblogs.com/God-/p/5556531.html)
+
+
 ## 工具
 
 
