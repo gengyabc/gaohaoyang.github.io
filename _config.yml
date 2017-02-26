@@ -29,7 +29,7 @@ description_footer: 记录，学习
 # comments
 # two ways to comment, only choose one, and use your own short name
 # 两种评论插件，选一个就好了，使用自己的 short_name
-duoshuo_shortname: #hygblog
+duoshuo_shortname: wanwu
 disqus_shortname: #gaohaoyang
 
 # statistic analysis 统计代码
@@ -37,7 +37,7 @@ disqus_shortname: #gaohaoyang
 # hm.src = "//hm.baidu.com/hm.js?xxxxxxxxxxxx";
 # xxxxx字符串
 baidu_tongji_id: 7d3d45f09639cc007b37ef7e2f00c9a3
-# google_analytics_id: UA-72449510-4 # google 分析追踪id
+google_analytics_id: UA-92623035-1 # google 分析追踪id
 
 # Build settings
 markdown: kramdown
