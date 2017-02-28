@@ -12,6 +12,10 @@ type: page
 
 
 
+## Linux 基础
+- [Linux命令行](http://billie66.github.io/TLCL/book/zh/)
+
+
 ## Git和GitHub
 - [Git简单教程](http://www.runoob.com/w3cnote/git-guide.html)
 
