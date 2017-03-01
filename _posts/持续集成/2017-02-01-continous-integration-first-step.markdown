@@ -101,7 +101,7 @@ Mac：~/.jenkins
      export JENKINS_HOME=/path/to/jenkins_home/
      ```
      然后terminal中
-     ```
+     ```bash
      $ source ~/.bash_profile
      ```
 

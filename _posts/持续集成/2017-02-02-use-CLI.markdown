@@ -14,12 +14,53 @@ author: Geng
 为啥放着图形界面不用，使用命令行界面呢？
 因为命令行界面：更简单，更快
 
-更重要的，适合远程操作，自动操作
+更重要的，适合远程操作，自动操作。比如我们需要使用脚本操作Jenkins。
 
 
 
 
 ## 使用CLI
+
+### 设置秘钥对
+为了使用CLI，我们需要用秘钥对，如果已经有了，那么直接进入下一步分即可。
+下面以mac系统为例说明。
+
+首先，terminal中输入下面命令查看是否具有秘钥对：
+
+```bash
+$ cd ~/.ssh
+$ ls
+```
+
+如果有此目录，并且具有`id_rsa.pub`文件，那么打开此文件，以备后用。
+
+如果没有此目录，那么
+
+```bash
+$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/name/.ssh/id_rsa): (直接回车)
+Created directory '/home/name/.ssh'.
+Enter passphrase (empty for no passphrase):(直接回车)
+Enter same passphrase again:(直接回车)
+Your identification has been saved in /home/name/.ssh/id_rsa.
+Your public key has been saved in /home/name/.ssh/id_rsa.pub.
+The key fingerprint is:
+```
+
+此时，将会建立你的秘钥对，打开`id_rsa.pub`文件，以备后用。
+
+
+### 设置SSH Public Keys
+页面右上角用户，点击出现下拉菜单，点击`设置`
+
+![]({{ site.url }}/assets/images/posts/2017-02-02-use-CLI/step2.png)
+
+页面下部，`SSH Public Keys`，有的话复制，没有的话填入你的公钥复制，然后粘贴到上述需要位置即可
+
+![]({{ site.url }}/assets/images/posts/2017-02-02-use-CLI/3.png)
+
+
 ### 进入CLI
 设置安全选项，`系统管理`->`Configure Global Security`
 
@@ -42,46 +83,15 @@ java -jar jenkins-cli.jar -s http://0.0.0.0:8080/ help
 ```bash
 $ Enter passphrase for /Users/gengyu/.ssh/id_rsa:
 ```
-如果不知道这些都是什么，参考下面部分 `设置秘钥对`
-
-### 设置秘钥对
-下面以mac系统为例说明。
-
-首先，terminal中输入下面命令查看是否具有秘钥对：
-```
-$ cd ~/.ssh
-$ ls
-```
-如果有此目录，并且具有`id_rsa.pub`文件，那么打开此文件，以备后用。
-
-如果没有此目录，那么
-```
-$ ssh-keygen
-Generating public/private rsa key pair.
-Enter file in which to save the key (/home/name/.ssh/id_rsa): (直接回车)
-Created directory '/home/name/.ssh'.
-Enter passphrase (empty for no passphrase):(直接回车)
-Enter same passphrase again:(直接回车)
-Your identification has been saved in /home/name/.ssh/id_rsa.
-Your public key has been saved in /home/name/.ssh/id_rsa.pub.
-The key fingerprint is:
-```
-此时，将会建立你的秘钥对，打开`id_rsa.pub`文件，以备后用。
-
-### 设置SSH Public Keys
-页面右上角用户，点击出现下拉菜单，点击`设置`
-
-![]({{ site.url }}/assets/images/posts/2017-02-02-use-CLI/step2.png)
-
-页面下部，`SSH Public Keys`，有的话复制，没有的话填入你的公钥复制，然后粘贴到上述需要位置即可
-
-![]({{ site.url }}/assets/images/posts/2017-02-02-use-CLI/3.png)
 
 如此设置之后，因为我们passphrase设置为空，此处直接回车即可
+
 ```bash
 $ Enter passphrase for /Users/gengyu/.ssh/id_rsa:
 ```
+
 将会输出下列信息：
+
 ```bash
   add-job-to-view
     Adds jobs to view.
@@ -97,6 +107,16 @@ $ Enter passphrase for /Users/gengyu/.ssh/id_rsa:
   who-am-i
     Reports your credential and permissions.
 ```
+
+注意：如果出现如下错误，说明你的公钥没有设置好，请仔细检查。
+
+```bash
+$ java -jar jenkins-cli.jar -s http://0.0.0.0:8080/ help
+
+ERROR: You must authenticate to access this Jenkins.
+Use --username/--password/--password-file parameters or login command. 
+```
+
 自己试试这些命令，如果还是不知道怎么用，进入网址：http://0.0.0.0:8080/cli/
 比如想要尝试`who-am-i`命令，页面下部找到这个命令，点击
 
