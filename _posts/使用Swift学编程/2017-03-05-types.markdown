@@ -1,0 +1,182 @@
+---
+layout: post
+title:  "4. 更多类型"
+categories: 使用Swift学编程
+tags:  swift 
+author: Geng
+---
+
+* content
+{:toc}
+
+
+我们已经学习了基本的数据类型及其使用方法，也知道了我们有什么运算符可用。如同上一章的问题，我们知道了怎么表达有两个苹果，但是怎么表达我的名字叫小明呢？
+
+这个时候，我们就涉及到了新的数据类型：**字符串**。这一章，我们首先会介绍什么是**数据类型**，然后介绍更多数字相关知识和字符串。
+
+
+
+
+
+## 数据类型
+数据类型是一种属性，用于指定数据的种类，比如我们上一章介绍的整数、浮点数。一个数据，有数据类型，同时也有一个相应的名称和值（或者属性）。上一章中，下面的代码创建了一个数据类型为**Int**，名称为**numberApple**，值为**10**的数据。
+
+```swift
+let numberApple: Int = 10
+```
+
+类似的，下面的代码创建了数据类型为**Double**，名称为**price**，值为**5.2**的数据。
+
+```swift
+let price: Double = 5.2
+```
+
+### 类型推断
+现在，看一下我们的代码
+```swift
+let numberApple: Int = 10
+let price: Double = 5.2
+```
+
+如果我按下面这样写（不指明数据类型），你能猜出来两个数据分别是什么数据类型吗？
+```swift
+let numberApple = 10
+let price = 5.2
+```
+
+> 提示：根据等号右边的数据有没有小数点来判断
+
+相信大家都可以猜出来吧？Swift也能！这个猜测的过程叫做**类型推断**。
+
+那么，我们如果想确定Swift的推断是否符合我们的心意怎么办呢？一个方法是点击右上角面板控制器的![]({{ site.url }}/assets/images/posts/swift/2017-03-05-types/1.png)，使其成蓝色激活状态，打开右边框。鼠标点击想要查看的变量或者常量的位置，右边栏会出现其具体信息。或者也可以按住`Option`键，鼠标点击，也可看到弹出框显示具体信息。
+
+那么什么时候可以使用类型推断什么时候不行呢？一般来说你能猜出来，Swift就能猜出来。你猜不出来，Swift也难猜出来。
+
+### 数据类型转换
+接下来，我们如果想对价格（price）取整呢？可以这样吗?
+```swift
+let price: Double = 12.5
+var priceInteger: Int = 0
+priceInteger = age
+```
+
+我们的**Playground**会报错：
+> Cannot assign value of type 'Double' to type 'Int'。
+
+并且会有修改建议：
+> Fix-it Replace "price" with "(Int)price"。
+
+双击接受这条建议，我们发现，代码变为了：
+```swift
+priceInteger = Int(price)    // => 12
+```
+
+<br>
+
+以上发生了什么事情呢？开始的报错，因为Swift不允许你将一个“Double”数据**隐式**（悄悄地，不公开说明）地转变为“Int”。推荐的修改建议是说，你要**显式**（公开）地说明，你想把“Double”转变为“Int”。
+
+<br>
+
+为什么呢？我们的`price`值为5.2，那么它转为“Int”后，小数怎么处理呢？如果采用显式转换`Int(age)`，Swift如同得到了你的授权，它将把小数直接忽略。但是如果反过来，“Int”转为“Double”呢？
+
+```swift
+price = priceInteger
+```
+我们发现，还是不行！，因为**swift是一门强类型语言，它不允许任何隐式的数据转换**。
+
+<br>
+
+所以上面代码必须改为：
+```swift
+price = Double(priceInteger)
+```
+
+由以上两个例子，我们可以总结出，如果进行数据转换的话，其形式应该是：
+```swift
+目标数据类型的数据 = 目标数据类型(待转换数据)
+```
+
+### 操作多种数据类型
+我们已经知道了苹果的数量，如果我们再知道苹果的单价，那么我们就可以计算出苹果的总价了吧：
+```swift
+let numberApple: Int = 10
+let price: Double = 5.2
+let totalPrice: Double = numberApple * price
+```
+
+在**Playground**中尝试，你应该会发现报错：
+> Binary operator '*' cannot be applied to operands of type 'Double' and 'Int'
+
+这是为什么呢？因为`numberApple`是“Int”数据，而`price`是“Double"数据，不是一种类型。如果要计算，必须将他们转变为同一种数据类型。如果你想要结果为“Int”，那么就把`price`转变为“Int”再做计算。这里，我们的`totalPrice`是“Double”，所以我们应该将`numberApple`转为“Double”：
+
+```swift
+let numberApple: Int = 10
+let price: Double = 5.2
+let totalPrice: Double = Double(numberApple) * price
+```
+
+### 小练习
+将上面计算总价的代码片段使用类型推断重写，并使用介绍的两种方法查看其推断类型。
+
+## 字符串
+在本章开始，我们要解决怎么表达我的名字叫小明的问题。这个时候，就轮到**字符串**（**String**）数据类型出场了。
+
+### 字符串定义
+```swift
+let name = "xiaoming"
+let name2 = "小明"
+```
+
+上面的代码定义了两个名字，一个英文是“xiaoming”，另一个是中文的“小明”。等号左边的部分叫做**字符串字面值**，使用双引号括起来。
+
+很明显，上面的代码我们靠类型推断来判断出以上两个常量是字符串，那么如果我们想显式声明呢，我们可以这样：
+```swift
+let name：String = "xiaoming"
+let name2: String = "小明"
+```
+
+### 字符串操作
+如果我们想要把名字分成“姓”和“名”分开存储，但是一起显示，可以怎么做呢，我们可以尝试下面方法把两个字符串用加号”+“加起来：
+
+```swift
+let firstName = "Meimei"
+let lastName = "Han"
+let fullName = firstName + lastName
+print(fullName)
+```
+
+我们注意到这个方法是可行的，但是有一个人问题，英文的“姓”和“名”需要中间有空格，怎么办呢？我们中间加一个空格试试：
+
+```swift
+let fullName = firstName + " " + lastName
+```
+
+<br>
+
+现在我们通过`print(fullName)`方法来打印全名，但是如果我想表达更完整信息呢，比如“我的名字叫某某，身高XXX”怎么办？
+
+```swift
+let firstName = "Meimei"
+let lastName = "Han"
+let height: Double = 1.72
+let fullName = firstName + " " + lastName
+print("My name is " + firstName + " and my height is " + String(height))
+```
+
+上面代码我们除了使用字符串相加，还使用了类型转换，将一个“Double”型常量转为了“String”。
+
+但是有一个问题，你看双引号看晕了吗？说实话，写多了我已经有点晕了。那怎么办呢？试试下面方法：
+
+```swift
+print("My name is \(firstName) and my height is \(height)")
+```
+
+这里，我们使用了字符串**插值**的方法，大大简化了代码的书写，提高了可读性。值得注意的是，这里我们在做插值的时候，数字直接转为了字符串。
+
+## 总结
+1. 更过数字类型的操作
+2. 类型转换
+3. 字符串基本操作
+
+## 下一步
+韩梅梅已经是一个大美女了，那么**如果**李雷还和她在一起，他们应该结婚了吧？（90，00后有兴趣可以百度韩梅梅和李雷的故事，我也想写你们的故事，但是我不知道啊。。。）

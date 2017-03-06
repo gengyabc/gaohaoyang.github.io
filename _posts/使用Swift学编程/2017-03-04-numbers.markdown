@@ -174,7 +174,7 @@ let numberOrange: Int = 8
 let pi: Double = 3.14159
 
 var numberWorker: Int = 5
-var hegith: Double = 1.82
+var height: Double = 1.82
 ```
 
 如果不认识英语，可以查字典。
@@ -249,14 +249,14 @@ let numberOrange: Int = 8
 let pi: Double = 3.14159
 ```
 声明一个名为**pi**的常量，数据类型为**双精度浮点型**(即上文所说的浮点数的一种)，赋值为**3.14159**。
-关于数据类型的更多细节，请参考[Swift 数据类型](http://www.jianshu.com/p/2091cd02b164)
+关于数据类型的更多细节，请参考下一章，或者网络资源：[Swift 数据类型](http://www.jianshu.com/p/2091cd02b164)
 
 <br>
 
 类似的，下面代码，与上面不同的仅仅是**let**变成了**var**
 ```swift
 var numberWorker: Int = 5
-var hegith: Double = 1.82
+var height: Double = 1.82
 ```
 
 var开头，则说明这个值是一个**变量**。
@@ -270,7 +270,7 @@ numberOrange = 5   // 错
 pi = 2.2           // 错
 
 numberWorker = 6  // 没问题
-hegith = 1.44     // 没问题
+height = 1.44     // 没问题
 ``` 
 
 > 上面的“=”是赋值运算符
