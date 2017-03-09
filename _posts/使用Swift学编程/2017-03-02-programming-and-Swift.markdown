@@ -64,5 +64,12 @@ author: Geng
 
 详细体系，我基本写完再补充吧，毕竟，这个只是一个初稿。
 
+## 说明
+本书初稿的体系借鉴《Swift Apprentice v2.0》，加入自己对编程的理解，并且会逐步渗入本人学习《Structure and Interpretation of Computer Programs》（SICP）的体会。
+
+所以，总体上，初稿像是一个翻译的过程，但是随着时间的推移，会让SICP的味道越来越浓，最终只能看到《Swift Apprentice v2.0》的一个影子。
+
+为什么不按照SICP来写一个Swift版本呢？最主要原因是我的能力不够，另一个原因是这样对初学者太难了。
+
 ## 如果有任何问题，请直接留言回复
 
