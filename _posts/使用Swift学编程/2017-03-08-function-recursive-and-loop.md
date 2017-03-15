@@ -486,6 +486,68 @@ func sum3From(_ from: Int, to: Int) -> Int {
 
 上面的这些递归和循环的讨论，有没有一种将简单问题复杂化的感觉呢？那为什么还要这么做呢？未来，我们会遇到很多递归很好解决，但是不容易想出如何使用迭代，也就是循环的情况。如果你掌握了这里的技巧，那么计算效率将会有显著提高。
 
+## 求解平方根
+上面的例子我们是不是有一种感觉，Swift的函数就是数学里的方程？但是考虑下面这种情况：
+
+$$ y=\sqrt {x},& 其中y /geq 0 而且y^{2}=x $$
+
+怎么写为Swift函数？
+
+上面的数学方程定义了什么是平方根，但是并没有任何如何求解的信息。但是如果要写一个Swift函数，必须要有怎么求解的信息。Swift函数和数学方程的区别在于前者描述做事的方法，后者描述这件事的性质。
+
+那么我们到底应该如何计算呢？我们可以使用一种简化的**牛顿法**求解。这种方法首先需要一个初始猜测值，然后连续采取特定的操作改进这个初始值，直到满意为止。
+
+如何把这种思路用在求平方根呢？我们可以将平方根的问题转变为：
+
+$$ y^{2}=x $$
+
+$$ y=\dfrac {x} {y} $$
+
+可以想象，如果设置一个初始猜测值\\(y_{0}\\)，然后取\\(y_{0}\\)与\\(\dfrac {x} {y_{0}\\)的平均值，然后将此平均值作为新的猜测值代入函数，继续取平均值。连续采取此步骤，直到满意。
+
+```swift
+func loopSqrtOf(_ num: Float, guess: Float) -> Float {
+    func isCloseEnough(_ num1: Float, _ num2: Float) -> Bool {
+        if abs(num1 - num2) < 0.001 {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    var myGuess = guess
+    
+    while !isCloseEnough(myGuess, num / myGuess) {
+        myGuess = (myGuess + num / myGuess) / 2
+    }
+    
+    return myGuess
+}
+
+loopSqrtOf(3, guess: 1)
+```
+
+由于以上代码已经是尾递归，我们很方便就可以将它转变为循环代码：
+```swift
+func sqrtOf(_ num: Float, guess: Float) -> Float {
+    func isCloseEnough(_ num1: Float, _ num2: Float) -> Bool {
+        if abs(num1 - num2) < 0.001 {
+             return true
+        } else {
+            return false
+        }
+    }
+    
+    if isCloseEnough(guess, num / guess) {
+        return guess
+    } else {
+        return sqrtOf(num, guess: (guess + num / guess) / 2)
+    }
+}
+
+sqrtOf(3, guess: 1)
+```
+
 
 ## 总结
 1. 函数的基本知识
