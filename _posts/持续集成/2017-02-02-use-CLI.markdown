@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "2. Jenkins使用 -- 使用CLI"
+title:  "2. Jenkins教程 -- 使用CLI"
 categories: 持续集成
 tags:  Jenkins
 author: Geng

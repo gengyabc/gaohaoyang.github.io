@@ -9,7 +9,7 @@
 title: 万物科技
 brief-intro: 学，以致用
 baseurl: "" # the subpath of your site, e.g. /blog
-description: "软件开发，持续集成，iOS，JavaScript，Docker，心理学，教育学，大数据"
+description: "软件开发，持续集成，iOS, Jenkins, DevOps, JavaScript，Docker，教育学，大数据"
 url: "https://gengyabc.github.io" # the base hostname & protocol for your site
 
 permalink: /:year/:month/:day/:title/

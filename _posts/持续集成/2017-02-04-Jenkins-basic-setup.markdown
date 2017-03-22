@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "4. Jenkins使用 -- 基本设置"
+title:  "4. Jenkins教程 -- 基本设置"
 categories: 持续集成
 tags:  Jenkins
 author: Geng

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "5. Jenkins使用 -- jobs"
+title:  "5. Jenkins教程 -- jobs"
 categories: 持续集成
 tags:  Jenkins
 author: Geng
@@ -9,16 +9,19 @@ author: Geng
 * content
 {:toc}
 
+首先我们了解一下Jenkins的导航结构，然后熟悉一下Jenkins项目状态的知识，并了解远程控制Jenkins和串行运行项目的方法。
 
 前几次我们一直在说项目（project），现在又出现一个job，他们分别是什么呢？根据[这个讨论](http://stackoverflow.com/questions/17902242/difference-between-jenkins-job-and-project)，这两个基本上是一个东西，名字基本可以互通，以下不再区分。
+
+
+
+
+
 
 ## 新建
 进入主页，点击`新建`
 
 ![]({{ site.url }}/assets/images/posts/2017-02-04-Jenkins-jobs/new.png)
-
-
-
 
 然后出现下图界面，`Enter an item name`中输入*DevProject1*，然后选择`构建一个自由风格的软件项目`，最后点击`OK`保存。
 

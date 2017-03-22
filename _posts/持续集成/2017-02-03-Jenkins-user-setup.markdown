@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "3. Jenkins使用 -- 用户设置"
+title:  "3. Jenkins教程 -- 用户设置"
 categories: 持续集成
 tags:  Jenkins
 author: Geng
@@ -9,13 +9,16 @@ author: Geng
 * content
 {:toc}
 
+我们已经初步了解了什么是持续集成，并知道了Jenkins的一些基本信息。可能有读者已经发现，我们现在只有一个管理员账号，而且即使新建账号，也是管理员权限。显然，这对安全性来说不是一个好消息。幸运的是，Jenkins带给我们一种角色管理机制，可以使我们方便的控制用户的权限。
+
+
+
+
+
 ## 建立用户
 主页点击`系统管理` -> `管理用户`，可见现在只有一个管理员用户
 
 ![]({{ site.url }}/assets/images/posts/2017-02-03-Jenkins-user-setup/user.png)
-
-
-
 
 点击右侧`新建用户`
 
@@ -67,7 +70,7 @@ author: Geng
 
 - Global roles（全局角色）：管理员等高级用户可以创建基于全局的角色
 - Project roles（项目角色）： 针对某个或者某些项目的角色
-- Slave roles（奴隶角色）：节点相关的权限
+- Slave roles（从角色）：节点相关的权限
 
 我们可以发现，*admin角色*拥有所有权限。
 

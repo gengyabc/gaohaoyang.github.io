@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "6. Jenkins使用 -- 与git和github集成"
+title:  "6. Jenkins教程 -- 与git和github集成"
 categories: 持续集成
 tags:  Jenkins
 author: Geng

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "1. Jenkins使用 -- 持续集成初步"
+title:  "1. Jenkins教程 -- 持续集成初步"
 categories: 持续集成
 tags:  Jenkins
 author: Geng
@@ -13,13 +13,11 @@ author: Geng
 ![Continuous-Integration]({{ site.url }}/assets/images/posts/2017-02-01-continous-integration-first-step/Continuous-Integration.png "持续集成")
 
 持续集成（Continuous integration， CI），频繁地（一天多次）将代码集成到共享的代码仓库。
-
-
-
-
-
-
 Martin Fowler对持续集成是这样定义的:持续集成是一种软件开发实践，即团队开发成员频繁地集成他们的工作，通常每个成员每天至少集成一次，也就意味着每天可能`会发生多次集成。每次集成都通过自动化的构建（包括编译，发布，自动化测试)来验证，从而尽快地发现集成错误。持续集成并不能消除Bug，而是让它们非常容易发现和改正[^1]。
+
+
+
+
 
 它的好处主要有两个[^2]：
 > 1. 快速发现错误。每完成一点更新，就集成到主干，可以快速发现错误，定位错误也比较容易。
