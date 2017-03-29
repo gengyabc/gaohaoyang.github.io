@@ -36,7 +36,7 @@ Dcoker使得用户可以将应用与其依赖包共同打包到一个标准化�
 
 ## 安装
 mac，win：到https://www.docker.com/products/docker#/，下载安装包即可。
-Ubuntu：https://get.docker.com/提供了一个傻瓜是安装，直接`wget -qO- https://get.docker.com/ | sh`搞定``
+Ubuntu：https://get.docker.com/提供了一个傻瓜是安装，直接`wget -qO- https://get.docker.com/ | sh`搞定
 
 安装完后，运行下面命令可以看到一堆关于docker的信息
 ```bash
@@ -46,11 +46,10 @@ $ docker info
 ## Docker架构
 ![]({{ site.url }}/assets/images/posts/DevOps/2017-03-20-docker-intro/arcki.png)
 
-Docker使用`客户端`-`服务器`架构。`客户端`（Clent）与服务器后台（`Daemon`）通信，此`Daemon`干各种脏活累活。`客户端`与`服务器`可以在不同机器，也可以在相同机器。
+Docker使用`客户端`-`服务器`架构。`客户端`（Clent）与服务器守护进程（`Daemon`）通信，此`Daemon`干各种脏活累活。`客户端`与`服务器`可以在不同机器，也可以在相同机器。
 
-wrap them in backticks: `var example = true`.  
 
-Daemon：运行与Docker服务器
+Daemon：运行于Docker服务器
 客户端（Client）：Docker主要的用户界面，接受各种命令并与Daemon通信。
 镜像（Image）：一个只读的模版，用于创建 Docker 容器的模板。
 容器（Container）：独`立运行的一个或一组应用，镜像的实例。
