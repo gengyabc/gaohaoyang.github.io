@@ -11,33 +11,33 @@ author: Geng
 
 前面很多内容，已经提到了一些设置，这次介绍一些基本的设置。首先还是主页点击`系统管理`，然后进`系统设置`界面。
 
-![]({{ site.url }}/assets/images/posts/2017-02-04-Jenkins-basic-setup/conf.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-04-Jenkins-basic-setup/conf.png)
 
 
 
 
 我们可以看到如下界面
 
-![]({{ site.url }}/assets/images/posts/2017-02-04-Jenkins-basic-setup/all.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-04-Jenkins-basic-setup/all.png)
 ## 主目录
 第一行`主目录`我们已经介绍过了，就是你的`Jenkins`设置文件存放的位置，想设置高级选项，可以点开右侧``高级...`，有疑问可以点击右侧*问号*。
 
 ## 系统消息
 第二行是`系统消息`，比如我们输入”这个是系统消息“，然后点击`Apply`保存设置。
 
-![]({{ site.url }}/assets/images/posts/2017-02-04-Jenkins-basic-setup/pl.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-04-Jenkins-basic-setup/pl.png)
 
 新开一个Jenkins页面，可以看到这个消息位于页面头部。
 
-![]({{ site.url }}/assets/images/posts/2017-02-04-Jenkins-basic-setup/sys.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-04-Jenkins-basic-setup/sys.png)
 
 `系统消息`也可以使用HTML格式，不过我们需要进行一些设置。点击左侧`系统管理`，然后点击右侧`Configure Global Security`，找到`Markup Formatter`，将其设置为*Safe HTML*。保存设置。
 
-![]({{ site.url }}/assets/images/posts/2017-02-04-Jenkins-basic-setup/html.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-04-Jenkins-basic-setup/html.png)
 
 回到我们之前的系统设置页面，我们可以看到输入框下面的**Plain text**改为了**Safe HTML**，我们可以点击`预览`查看效果，如下图所示。打开一个新的主页面，查看效果。
 
-![]({{ site.url }}/assets/images/posts/2017-02-04-Jenkins-basic-setup/h.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-04-Jenkins-basic-setup/h.png)
 
 ## Maven项目配置
 配置一些Maven相关属性，其中，`执行者数量`是能够执行的job的数目。

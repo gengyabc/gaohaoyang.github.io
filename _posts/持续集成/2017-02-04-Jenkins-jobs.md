@@ -21,11 +21,11 @@ author: Geng
 ## 新建
 进入主页，点击`新建`
 
-![]({{ site.url }}/assets/images/posts/2017-02-04-Jenkins-jobs/new.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-04-Jenkins-jobs/new.png)
 
 然后出现下图界面，`Enter an item name`中输入*DevProject1*，然后选择`构建一个自由风格的软件项目`，最后点击`OK`保存。
 
-![]({{ site.url }}/assets/images/posts/2017-02-04-Jenkins-jobs/enter.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-04-Jenkins-jobs/enter.png)
 
 这样，我们在主页就可以看到这个项目了
 
@@ -55,22 +55,22 @@ author: Geng
 ## 熟悉Jenkins导航
 我们这里先熟悉下Jenkins的导航，首先应该注意，头部有导航标识（这个应该叫啥啊，我不知道，自己取得名字，请大家能够提供学名，谢谢），如下图所示
 
-![]({{ site.url }}/assets/images/posts/2017-02-04-Jenkins-jobs/nav1.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-04-Jenkins-jobs/nav1.png)
 
 如果我点击一个项目名称，比如`DevProject1`
 
-![]({{ site.url }}/assets/images/posts/2017-02-04-Jenkins-jobs/女.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-04-Jenkins-jobs/女.png)
 
 进入这个项目的页面，如下，注意红框中的变化
 
-![]({{ site.url }}/assets/images/posts/2017-02-04-Jenkins-jobs/nav3.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-04-Jenkins-jobs/nav3.png)
 
 鼠标悬浮会有各种下拉菜单，自己可以体验。
 
 ## 项目状态
 进入Jenkins主页，如果有项目的话，会如下图显示
 
-![]({{ site.url }}/assets/images/posts/2017-02-04-Jenkins-jobs/pro.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-04-Jenkins-jobs/pro.png)
 
 注意红框`S`和`W`对应的标识，鼠标悬浮提示分别为“上次构建状态"和”编译晴雨表“。
 
@@ -78,15 +78,15 @@ author: Geng
 
 点击进入一个项目，或者通过下拉菜单，点击`立即构建`（第一次），出现下图变化
 
-![]({{ site.url }}/assets/images/posts/2017-02-04-Jenkins-jobs/1.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-04-Jenkins-jobs/1.png)
 
 `S`变蓝色，鼠标悬浮提示*success*， `W`太阳位置，悬浮提示如下图
 
-![]({{ site.url }}/assets/images/posts/2017-02-04-Jenkins-jobs/sun.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-04-Jenkins-jobs/sun.png)
 
 这次模拟一次构建失败。进入项目配置，找到`构建`，因为我用的Mac，所以选择”Execute shell“，如果是win用户，请选择第一个选项。
 
-![]({{ site.url }}/assets/images/posts/2017-02-04-Jenkins-jobs/2.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-04-Jenkins-jobs/2.png)
 
 `Command`框中，输入不是mac也不是win命令的一串无意义字符，比如“asdf"，保存设置，然后点击`立即构建`（第二次），观察项目主页图标变化。
 
@@ -94,28 +94,28 @@ author: Geng
 
 然后删除刚才的那个无意义的命令，再次构建（第四次）。然后再次构建（第五次）。项目主页如下显示，`S`为蓝色，`W`显示乌云。鼠标悬浮，观察提示。
 
-![]({{ site.url }}/assets/images/posts/2017-02-04-Jenkins-jobs/5.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-04-Jenkins-jobs/5.png)
 
 有没有看出，`S`就是简单的本次构建成功与否，`W`是近五次构建情况总览，按照成功与失败比例，对应晴天到雷雨。
 
 `
 
-![]({{ site.url }}/assets/images/posts/2017-02-04-Jenkins-jobs/his.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-04-Jenkins-jobs/his.png)
 
 点击某个记录，今日此构建的主页
 
-![]({{ site.url }}/assets/images/posts/2017-02-04-Jenkins-jobs/bui.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-04-Jenkins-jobs/bui.png)
 
 左侧各种查看和设置选项，自己可以试试。比如点击`Console Output`，可见：
 
-![]({{ site.url }}/assets/images/posts/2017-02-04-Jenkins-jobs/fal.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-04-Jenkins-jobs/fal.png)
 
 显示控制台输出，并有我们失败的提示。
 
 ## 远程启动构建
 进入某个项目的设置，勾选`触发远程构建`，在`身份验证令牌`中填入一个字符串，比如“111”
 
-![]({{ site.url }}/assets/images/posts/2017-02-04-Jenkins-jobs/remo.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-04-Jenkins-jobs/remo.png)
 
 根据下方提示，浏览器输入“JENKINS_URL/job/TestProject1/build?token=TOKEN_NAME ”启动构建。
 
@@ -130,22 +130,22 @@ author: Geng
 ## 项目串联运行
 为了演示，快速建立三个项目如图：
 
-![]({{ site.url }}/assets/images/posts/2017-02-04-Jenkins-jobs/33.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-04-Jenkins-jobs/33.png)
 
 进入“2”的配置，找到`构建触发器`，勾选`Build after other projects are built`，`Projects to watch`填入“1”。注意下面三个单选框，这里使用默认设置。
 
-![]({{ site.url }}/assets/images/posts/2017-02-04-Jenkins-jobs/22.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-04-Jenkins-jobs/22.png)
 
 然后在`构建后操作`的操作中，选择`Build other projects`
 
-![]({{ site.url }}/assets/images/posts/2017-02-04-Jenkins-jobs/bui.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-04-Jenkins-jobs/bui.png)
 
 `要构建的项目`输入“3”。
 
-![]({{ site.url }}/assets/images/posts/2017-02-04-Jenkins-jobs/333.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-04-Jenkins-jobs/333.png)
 
 保存回到“2”项目主页后，发现如下图变化
 
-![]({{ site.url }}/assets/images/posts/2017-02-04-Jenkins-jobs/chag.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-04-Jenkins-jobs/chag.png)
 
 查看其他两个项目，同样出现对应的上下级项目。

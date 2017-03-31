@@ -10,7 +10,7 @@ author: Geng
 {:toc}
 
 ## 什么是持续集成
-![Continuous-Integration]({{ site.url }}/assets/images/posts/2017-02-01-continous-integration-first-step/Continuous-Integration.png "持续集成")
+![Continuous-Integration]({{ site.url }}/assets/images/posts/CI/2017-02-01-continous-integration-first-step/Continuous-Integration.png "持续集成")
 
 持续集成（Continuous integration， CI），频繁地（一天多次）将代码集成到共享的代码仓库。
 Martin Fowler对持续集成是这样定义的:持续集成是一种软件开发实践，即团队开发成员频繁地集成他们的工作，通常每个成员每天至少集成一次，也就意味着每天可能`会发生多次集成。每次集成都通过自动化的构建（包括编译，发布，自动化测试)来验证，从而尽快地发现集成错误。持续集成并不能消除Bug，而是让它们非常容易发现和改正[^1]。
@@ -28,7 +28,7 @@ Martin Fowler对持续集成是这样定义的:持续集成是一种软件开发
 它的核心措施是，代码集成到主干之前，必须通过自动化测试。只要有一个测试用例失败，就不能集成。
 
 与持续集成相关的，还有两个概念，分别是持续交付和持续部署。
-![]({{ site.url }}/assets/images/posts/2017-02-01-continous-integration-first-step/CI等.jpg)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-01-continous-integration-first-step/CI等.jpg)
 
 ### 持续交付
 持续交付（Continuous delivery）指的是，频繁地将软件的新版本，交付给质量团队或者用户，以供评审。如果评审通过，代码就进入生产阶段。
@@ -40,13 +40,13 @@ Martin Fowler对持续集成是这样定义的:持续集成是一种软件开发
 持续部署的前提是能自动化完成测试、构建、部署等步骤。
 
 ### 三者关系
-![]({{ site.url }}/assets/images/posts/2017-02-01-continous-integration-first-step/relation.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-01-continous-integration-first-step/relation.png)
 
 ## 本系列目的
 在借鉴[从0到1搭建移动App功能自动化测试平台](http://debugtalk.com/post/build-app-automated-test-platform-from-0-to-1-backgroud-introduction/)的基础上，搭建适合自己使用的App及网站测试平台。 
 本系列还将使用Appium，rails等服务。总体系统系统构建思路将在未来补上。
 
-![]({{ site.url }}/assets/images/posts/2017-02-01-continous-integration-first-step/集成.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-01-continous-integration-first-step/集成.png)
 
 ## 使用Jenkins做持续集成
 持续集成的工具有很多，想要了解具体情况可以参考[Comparison of continuous integration software](https://en.wikipedia.org/wiki/Comparison_of_continuous_integration_software)，这里不做更过介绍，而是直接使用Jenkins。
@@ -57,12 +57,12 @@ Jenkins是一个开源软件项目，旨在提供一个开放易用的软件平�
 
 ### Jenkins在持续集成中的位置
 
-![]({{ site.url }}/assets/images/posts/2017-02-01-continous-integration-first-step/introduction-to-jenkins-7-638.jpg)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-01-continous-integration-first-step/introduction-to-jenkins-7-638.jpg)
 
 ### 安装及初始化
 1. 下载jenkins war文件：https://jenkins.io/
 
-   ![]({{ site.url }}/assets/images/posts/2017-02-01-continous-integration-first-step/jenkins.png)
+   ![]({{ site.url }}/assets/images/posts/CI/2017-02-01-continous-integration-first-step/jenkins.png)
 2. 运行：java -jar jenkins.war
 3. 登录：http://0.0.0.0:8080/
 4. 根据提示进行设置。具体为：根据提示，找到生成的随机密码，复制下来，粘贴到密码框，点击确定。c1ea9eccb8ea49ef9f4bdab2e236f41b
@@ -70,22 +70,22 @@ Jenkins是一个开源软件项目，旨在提供一个开放易用的软件平�
 6. 如果提示要注册用户，注册即可。我没有选择任何插件，进入了`admin`用户
 7. 完
 
-![]({{ site.url }}/assets/images/posts/2017-02-01-continous-integration-first-step/main.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-01-continous-integration-first-step/main.png)
 
 ### 修改管理员账户密码
 
 页面右上角点击用户名，下拉菜单，选择`设置`
 
-![]({{ site.url }}/assets/images/posts/2017-02-01-continous-integration-first-step/step2.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-01-continous-integration-first-step/step2.png)
 
 修改密码，方便以后管理和维护
 
-![]({{ site.url }}/assets/images/posts/2017-02-01-continous-integration-first-step/4.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-01-continous-integration-first-step/4.png)
 
 ### 配置文件位置
 Mac：~/.jenkins
 也可以通过：`系统管理` -> `系统设置` 查看
-![]({{ site.url }}/assets/images/posts/2017-02-01-continous-integration-first-step/change.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-01-continous-integration-first-step/change.png)
 
 ### 修改配置文件位置？
 不管为什么，我想要修改配置文件位置怎么办？
@@ -105,7 +105,7 @@ Mac：~/.jenkins
 
    * win
 
-![]({{ site.url }}/assets/images/posts/2017-02-01-continous-integration-first-step/win.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-01-continous-integration-first-step/win.png)
 
 [^1]:http://baike.baidu.com/view/5253255.htm
 [^2]:http://www.ruanyifeng.com/blog/2015/09/continuous-integration.html

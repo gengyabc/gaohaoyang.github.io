@@ -43,7 +43,7 @@ java HelloWorld
 
 设定构建选项。进入项目配置，找到`构建`，因为我用的Mac，所以选择”Execute shell“，如果是win用户，请选择第一个选项。
 
-![]({{ site.url }}/assets/images/posts/2017-02-05-Jenkins-git-github/2.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-05-Jenkins-git-github/2.png)
 
 `Command`框中，输入：
 
@@ -56,7 +56,7 @@ java HelloWorld
 
 然后测试一下，点击`立即构建`，构建完成后，点击这次构建的历史记录：
 
-![]({{ site.url }}/assets/images/posts/2017-02-05-Jenkins-git-github/b.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-05-Jenkins-git-github/b.png)
 
 然后点击`Console Output`，我们便可以看到控制台输出结果了，说明目前我们此job配置正确。
 
@@ -120,16 +120,16 @@ $ pbcopy < ~/.ssh/id_rsa.pub
 
 2. github右上角用户头像位置，点击出现下拉菜单，点击`Settings`
 
-![]({{ site.url }}/assets/images/posts/2017-02-05-Jenkins-git-github/git.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-05-Jenkins-git-github/git.png)
 
 点击`New SSH Key`，然后`Title`中填入你自己给这个key起的名称方便记忆和分辨。`Key`中粘贴复制的key，最后点击“Add SSH Key`即可。
 
-![]({{ site.url }}/assets/images/posts/2017-02-05-Jenkins-git-github/ti.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-05-Jenkins-git-github/ti.png)
 
 ### 将java程序上传至github
 登录github后，页面右上角，点击`New repository`
 
-![]({{ site.url }}/assets/images/posts/2017-02-05-Jenkins-git-github/new.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-05-Jenkins-git-github/new.png)
 
 `Repository name`中输入“HelloWorld”，然后点击`Create Repository`，然后根据提示，输入命令即可，比如：
 ```bash
@@ -143,11 +143,11 @@ $ git push -u origin master
 
 进入Jenkins项目的管理页面，找到`源码管理`，点选`Git`，地址填入GitHub项目的git地址（我发现用ssh地址好像不能工作，不知道为什么，这里使用https地址）
 
-![]({{ site.url }}/assets/images/posts/2017-02-05-Jenkins-git-github/gitaa.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-05-Jenkins-git-github/gitaa.png)
 
 `构建触发器`，勾选`Poll SCM`，`日程表`填入“* * * * *”(实际工作中不要填入这一堆\*，这里是说每分钟都去查看有没有更新，有更新就拖下来构建，这样会累死Jenkins和服务器`)，然后保存。
 
-![]({{ site.url }}/assets/images/posts/2017-02-05-Jenkins-git-github/bui.png)
+![]({{ site.url }}/assets/images/posts/CI/2017-02-05-Jenkins-git-github/bui.png)
 
 修改java项目，然后保存并提交修改到github
 ```bash
