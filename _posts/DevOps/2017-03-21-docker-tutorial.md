@@ -80,7 +80,7 @@ bin   dev   etc   home  proc  root  sys   tmp   usr   var
 
 > 在容器中，尝试新建一个文件，比如*touch myfile.txt*,然后*ls*确认新建成功。输入*exit*，点击*Enter*。再次*docker run -it busybox sh*进入容器，运行*ls*。有没有发现，刚才新建的文件消失了。这是因为我们使用*run*启动镜像，每次都会创建全新的容器。
 
-下面在说下怎么删除容器。我们刚才看到，即使我们退出容易，仍然可以通过*docker ps -a*命令看到退出容器的残留。随着容器建立退出次数越来越多，这些残留将会占用大量硬盘空间。因此，如果没有特殊需求，最好用完之后清除这些残留。我们可以使用*docker rm*命令，后面填容器的container ID（通过*docker ps -a*可见此ID）
+下面在说下怎么删除容器。我们刚才看到，即使我们退出容器，仍然可以通过*docker ps -a*命令看到退出容器的残留。随着容器建立退出次数越来越多，这些残留将会占用大量硬盘空间。因此，如果没有特殊需求，最好用完之后清除这些残留。我们可以使用*docker rm*命令，后面填容器的container ID（通过*docker ps -a*可见此ID）
 
 ```bash
 $ docker rm 305297d7a235 ff0a5c3750b9
