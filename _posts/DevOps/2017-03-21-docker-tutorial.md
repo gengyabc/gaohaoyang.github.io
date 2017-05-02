@@ -26,7 +26,7 @@ $ docker pull busybox
 ```
 > 由于系统权限问题，上述`命令可能会有问题。Mac系统请查看Docker引擎正在运行。Linux请尝试“sudo docker pull busybox”
 
-*pull*命令将`busybox`镜像从Decker寄存器提取并保存在你的系统。
+*pull*命令将`busybox`镜像从Docker寄存器提取并保存在你的系统。
 
 运行下面命令，可以看到系统上安装的所有镜像
 ```
@@ -167,7 +167,7 @@ $ docker pull ubuntu:12.04
 ### 我们的第一个镜像
 需要python支持，没有的话自己去安装。
 
-我们的目标是建立一个[Flash](http://flask.pocoo.org/)应用。这个应用是原作者做的，每次载入会显示一个随机的小猫动图。请[复制此库到本地](https://github.com/prakhar1989/docker-curriculum/)。
+我们的目标是建立一个[Flask](http://flask.pocoo.org/)应用。这个应用是原作者做的，每次载入会显示一个随机的小猫动图。请[复制此库到本地](https://github.com/prakhar1989/docker-curriculum/)。
 
 #### 验证本地工作
 进入`flask-app`路径然后运行此应用，如下：

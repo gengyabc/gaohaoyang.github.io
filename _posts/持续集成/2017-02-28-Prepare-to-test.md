@@ -128,7 +128,7 @@ WARN AppiumDoctor  ✖ emulator could not be found because ANDROID_HOME is NOT s
 export PATH=${JAVA_HOME}/bin:$PATH
 
 export JAVA_HOME=$(/usr/libexec/java_home)
-export ANDROID_HOME=/Users/gengyu/Library/Android/sdk
+export ANDROID_HOME=/Users/你的名字/Library/Android/sdk
 ```
 
 最后结果如果是下面这样，说明一些环境准备就绪了：
