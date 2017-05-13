@@ -239,7 +239,3 @@ type: page
 - [https://gyrosco.pe/](https://gyrosco.pe/)
 
     首页的卡片翻动效果非常赞。
-
-## Comments
-
-{% include comments.html %}
