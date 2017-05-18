@@ -43,6 +43,8 @@ author: Geng
 
 `Appium`采用*Client-Server*的架构设计，并采用标准的HTTP通信协议；`Server`端负责与`iOS/Android`原生测试框架交互，无需测试人员关注细节实现；`Client`端基本上可以采用任意主流编程语言编写测试用例，减少了学习成本。
 
+关于Appium的设计哲学及如何实现这些思想，建议阅读这份[官方文档](https://github.com/appium/appium/blob/master/docs/en/about-appium/intro.md)(这个是英文版，虽然有中文翻译版本，但是不够新，所以这里给出的英文版链接)
+
 ## 准备测试
 Appium最近出了一款新的桌面版本，Appium Desktop。它为`Appium Servier`提供了全新的图形界面，我们以后将主要使用它来进行我们的工作。它包括：
 * `Appium Servier`图形界面。内部集成了Node，不再需要单独安装Node。
@@ -62,7 +64,7 @@ Appium最近出了一款新的桌面版本，Appium Desktop。它为`Appium Serv
 
 #### Android环境
 * Android SDK API >= 17 (Additional features require 18/19)
-* Appium supports Android on OS X, Linux and Windows. 
+* Appium supports Android on OS X, Linux and Windows.
 
 ### 版本选择（和Appium desktop无关）
 尤其版本进化速度很快，安装包很可能不能跟上时代，所以建议大家仔细查看安装的版本。现在（2017.03）在`Mac`平台上，最新的安装包是1.5.3，但最新版已经1.6.3了。
@@ -134,9 +136,9 @@ export ANDROID_HOME=/Users/你的名字/Library/Android/sdk
 最后结果如果是下面这样，说明一些环境准备就绪了：
 ```bash
 info AppiumDoctor ### Diagnostic completed, no fix needed. ###
-info AppiumDoctor 
+info AppiumDoctor
 info AppiumDoctor Everything looks good, bye!
-info AppiumDoctor 
+info AppiumDoctor
 ```
 
 #### Appium desktop安装

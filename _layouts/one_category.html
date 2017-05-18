@@ -13,41 +13,21 @@ type: page
           <p>{{ page.content }}</p>
         {% endunless %}
 
+        <ul>
         {% for post in site.categories.[page.category] %}
         <div class="post-preview">
-          <a href="{{ post.url | prepend: site.baseurl }}">
-            <h2 class="post-title">
-              {{ post.title }}
-            </h2>
-            {% if post.subtitle %}
-            <h3 class="post-subtitle">
-              {{ post.subtitle }}
-            </h3>
-            {% endif %}
-          </a>
-          <div class="label">
-              <div class="label-card">
-                  <i class="fa fa-calendar"></i>{{ post.date | date: "%F" }}
-              </div>
-              <div class="label-card">
-                  {% if post.author %}<i class="fa fa-user"></i>{{ post.author }}
-                  {% endif %}
-              </div>
-              <div class="label-card">
-                  {% if page.meta %}<i class="fa fa-key"></i>{{ page.meta }}  {% endif %}
-              </div>
+          <li>
+              <time>
+              {{ post.date | date:"%F" }} {{ post.date | date: "%a" }}.
+              </time>
+              <a class="title" href="{{ post.url }}">{{ post.title }}</a>
 
-              <div class="label-card">
               {% include category.html %}
-              </div>
-
-              <div class="label-card">
               {% include tag.html %}
-              </div>
-          </div>
+          </li>
         </div>
-        <hr>
       {% endfor %}
+    </ul>
     </div>
     <button class="anchor"><i class="fa fa-anchor"></i></button>
     <div class="right">
@@ -56,7 +36,7 @@ type: page
             <div class="side ">
               <div>
                 <i class="fa fa-th-list"></i>
-                Categories
+                分类页
               </div>
               <ul class="content-ul" cate>
                 {% for category in site.categories %}
