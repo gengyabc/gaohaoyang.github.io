@@ -2,7 +2,7 @@
 layout: post
 title:  "10. 使用Appium测试iOS应用"
 categories: 持续集成
-tags:  Appium Python
+tags:  Appium python
 author: Geng
 ---
 
