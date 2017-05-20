@@ -10,7 +10,6 @@ author: Geng
 {:toc}
 
 
-# Scipy基本介绍
 前面已经介绍，Scipy在Numpy基础上扩展了更多功能，比如回归，傅里叶变换等。
 
 ## 简单介绍

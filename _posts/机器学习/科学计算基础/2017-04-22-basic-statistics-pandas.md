@@ -10,7 +10,6 @@ author: Geng
 {:toc}
 
 
-# Python在统计学的应用
 这部分内容主要来自[此教程](http://www.scipy-lectures.org/packages/statistics/index.html)
 
 需要下列依赖：
