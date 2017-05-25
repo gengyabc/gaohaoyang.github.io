@@ -28,7 +28,7 @@ pip install -U selenium==3.3.0
 这个坑填平后，我们可以开始测试了。
 
 ## python-client介绍
-我们在[7. 测试前准备 -- 更新]({{ post_url 2017-02-28-Prepare-to-test.md }})中已经介绍过**python-client**的安装，这里不再重复。
+我们在[7. 测试前准备 -- 更新]({% post_url 2017-02-28-Prepare-to-test %})中已经介绍过**python-client**的安装，这里不再重复。
 
 这里只是简单介绍一下，大概有个了解即可，否则这部分成了测试内容了。
 
@@ -128,7 +128,7 @@ class TableSearchTests(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    suite = unittest.TestLoader().loadTestsFromTestCase(TableSearchTest)
+    suite = unittest.TestLoader().loadTestsFromTestCase(TableSearchTests)
     unittest.TextTestRunner(verbosity=2).run(suite)
 
 ```
