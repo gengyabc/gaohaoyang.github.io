@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "4. 函数基础"
+title:  "JavaScript 4. 函数基础"
 categories: ReactNative
-tags:  JavaScript ReactNative 
+tags:  JavaScript  
 author: Geng
 ---
 

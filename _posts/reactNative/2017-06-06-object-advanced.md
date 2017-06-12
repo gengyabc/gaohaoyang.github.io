@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "6. 对象 -- 高级内容"
+title:  "JavaScript 6. 对象 -- 高级内容"
 categories: ReactNative
-tags:  JavaScript ReactNative 
+tags:  JavaScript  
 author: Geng
 ---
 

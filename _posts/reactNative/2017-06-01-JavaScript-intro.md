@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "1. JavaScript介绍"
+title:  "JavaScript 1. 介绍"
 categories: ReactNative
-tags:  JavaScript ReactNative 
+tags:  JavaScript  
 author: Geng
 ---
 

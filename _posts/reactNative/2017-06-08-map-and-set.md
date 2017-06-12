@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "8. Map和Set"
+title:  "JavaScript 8. Map和Set"
 categories: ReactNative
-tags:  JavaScript ReactNative 
+tags:  JavaScript  
 author: Geng
 ---
 

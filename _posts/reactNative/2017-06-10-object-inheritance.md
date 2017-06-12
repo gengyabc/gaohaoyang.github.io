@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "10. 对象 -- 继承"
+title:  "JavaScript 10. 对象 -- 继承"
 categories: ReactNative
-tags:  JavaScript ReactNative 
+tags:  JavaScript  
 author: Geng
 ---
 

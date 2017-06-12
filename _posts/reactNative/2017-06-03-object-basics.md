@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "3. 对象基础"
+title:  "JavaScript 3. 对象基础"
 categories: ReactNative
-tags:  JavaScript ReactNative 
+tags:  JavaScript  
 author: Geng
 ---
 
