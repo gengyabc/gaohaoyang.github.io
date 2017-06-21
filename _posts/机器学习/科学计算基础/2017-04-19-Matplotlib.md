@@ -52,7 +52,7 @@ plt.show()
 ```
 
 
-![]({{ site.url }}/assets/images/posts/machineLearning/2017-04-19-Matplotlib/output_5_0.png)
+![]({{ site.url }}/assets/images/posts/machineLearning/科学计算基础/2017-04-19-Matplotlib/output_5_0.png)
 
 
 ### 直方图
@@ -65,7 +65,7 @@ plt.show()
 ```
 
 
-![]({{ site.url }}/assets/images/posts/machineLearning/2017-04-19-Matplotlib/output_7_0.png)
+![]({{ site.url }}/assets/images/posts/machineLearning/科学计算基础/2017-04-19-Matplotlib/output_7_0.png)
 
 
 ### 散点图
@@ -79,7 +79,7 @@ plt.show()
 ```
 
 
-![]({{ site.url }}/assets/images/posts/machineLearning/2017-04-19-Matplotlib/output_9_0.png)
+![]({{ site.url }}/assets/images/posts/machineLearning/科学计算基础/2017-04-19-Matplotlib/output_9_0.png)
 
 
 ## 画图设置
@@ -100,7 +100,7 @@ plt.show()
 ```
 
 
-![]({{ site.url }}/assets/images/posts/machineLearning/2017-04-19-Matplotlib/output_11_0.png)
+![]({{ site.url }}/assets/images/posts/machineLearning/科学计算基础/2017-04-19-Matplotlib/output_11_0.png)
 
 
 我们可以看到，上图已经有了很多设置，比如线型，颜色等，说明默认设置已经帮我们做了许多工作，那么这些默认设置怎么做的呢？我们将这些默认设置显式的写出来看下(颜色可能不够准确，不要太讲究哈)。
@@ -142,7 +142,7 @@ plt.show()
 ```
 
 
-![]({{ site.url }}/assets/images/posts/machineLearning/2017-04-19-Matplotlib/output_13_0.png)
+![]({{ site.url }}/assets/images/posts/machineLearning/科学计算基础/2017-04-19-Matplotlib/output_13_0.png)
 
 
 上面说有设置自己修改，可以观察变化，学习怎样设置
@@ -159,7 +159,7 @@ plt.show()
 ```
 
 
-![]({{ site.url }}/assets/images/posts/machineLearning/2017-04-19-Matplotlib/output_15_0.png)
+![]({{ site.url }}/assets/images/posts/machineLearning/科学计算基础/2017-04-19-Matplotlib/output_15_0.png)
 
 
 ### Figures和Subplots

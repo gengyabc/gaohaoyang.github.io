@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "概率论与数理统计 2. 排列组合"
-categories: 概率论与数理统计
+title:  "概率论 2. 排列组合"
+categories: 概率论
 tags:  理论
 author: Geng
 ---
@@ -22,7 +22,7 @@ author: Geng
 ## 排列
 假设我们正在进行一组试验，如下图所示：
 
-![]({{ site.url }}/assets/images/posts/machineLearning/2017-05-21-permulation-combination/tree.png)
+![]({{ site.url }}/assets/images/posts/machineLearning/概率论/2017-05-21-permulation-combination/tree.png)
 
 我们可以想象沿着上图的各个分支游走，各个阶段的可能个数分别为n1, n2, n3。那么最后可能的结果就有\\(n1 \* n2 \* n3\\)个。
 
@@ -44,7 +44,7 @@ $$
 
 那么如何计算\\( \left( \begin{matrix} n \newline k\end{matrix} \right) \\)呢？我们可以观察下图：
 
-![]({{ site.url }}/assets/images/posts/machineLearning/2017-05-21-permulation-combination/relation.png)
+![]({{ site.url }}/assets/images/posts/machineLearning/概率论/2017-05-21-permulation-combination/relation.png)
 
 可见，n挑出k个的组合，可以从另一条路径去理解：首先我们可以看到，n选k排列的话，有\\(\dfrac {n!} {(n-k)!}\\)种排列方法，那么其中有多少重复的组合呢？看一下另一个路径：“k个数排队”，有k！个排列方法。也就是说，\\(\dfrac {n!} {(n-k)!}\\)中有k！个重复的组合。那么：
 $$ \left( \begin{matrix} n\\ k\end{matrix} \right) = \dfrac {n!} {k! (n-k)!} $$

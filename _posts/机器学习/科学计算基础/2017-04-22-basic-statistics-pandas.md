@@ -334,7 +334,7 @@ plt.show()
 ```
 
 
-![]({{ site.url }}/assets/images/posts/machineLearning/2017-04-22-basic-statistics-pandas/output_16_0.png)
+![]({{ site.url }}/assets/images/posts/machineLearning/科学计算基础/2017-04-22-basic-statistics-pandas/output_16_0.png)
 
 
 #### 绘制散点图
@@ -350,11 +350,11 @@ plt.show()
 ```
 
 
-![]({{ site.url }}/assets/images/posts/machineLearning/2017-04-22-basic-statistics-pandas/output_18_0.png)
+![]({{ site.url }}/assets/images/posts/machineLearning/科学计算基础/2017-04-22-basic-statistics-pandas/output_18_0.png)
 
 
 
-![]({{ site.url }}/assets/images/posts/machineLearning/2017-04-22-basic-statistics-pandas/output_18_1.png)
+![]({{ site.url }}/assets/images/posts/machineLearning/科学计算基础/2017-04-22-basic-statistics-pandas/output_18_1.png)
 
 
 ## 假设检验

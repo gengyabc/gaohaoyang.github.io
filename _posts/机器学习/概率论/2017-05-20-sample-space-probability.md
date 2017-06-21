@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "概率论与数理统计 1. 样本空间和概率"
-categories: 概率论与数理统计
+title:  "概率论 1. 样本空间和概率"
+categories: 概率论
 tags:  理论
 author: Geng
 ---
@@ -16,7 +16,7 @@ author: Geng
 
 对于掷骰子的概率问题，借用MIT课件的图（掷两次骰子）：
 
-![]({{ site.url }}/assets/images/posts/machineLearning/2017-05-20-sample-space-probability/roll.png)
+![]({{ site.url }}/assets/images/posts/machineLearning/概率论/2017-05-20-sample-space-probability/roll.png)
 
 
 
@@ -27,12 +27,12 @@ author: Geng
 
 对于左图，可以很方便的画出某种可能性的区域，比如第一次是2，第二次小于3，并可以在图上清晰的看出这个区域：
 
-![]({{ site.url }}/assets/images/posts/machineLearning/2017-05-20-sample-space-probability/roll23.png)
+![]({{ site.url }}/assets/images/posts/machineLearning/概率论/2017-05-20-sample-space-probability/roll23.png)
 
 
 对于右图，可以很方便的跟踪某种可能性的过程，比如还是第一次是2，第二次小于3，并可以在图上清晰的看出这个过程：
 
-![]({{ site.url }}/assets/images/posts/machineLearning/2017-05-20-sample-space-probability/roll23tree.png)
+![]({{ site.url }}/assets/images/posts/machineLearning/概率论/2017-05-20-sample-space-probability/roll23tree.png)
 
 以上是离散的例子，关于连续的例子，画起来稍复杂，但是根据离散的例子，完全可以大致建立起基本的概率的观念了。
 
@@ -46,7 +46,7 @@ author: Geng
 ## 条件概率
 已知部分信息的条件下，判断结果会是什么。这其实就是一个缩小样本空间的问题
 
-![]({{ site.url }}/assets/images/posts/machineLearning/2017-05-20-sample-space-probability/conditional.png)
+![]({{ site.url }}/assets/images/posts/machineLearning/概率论/2017-05-20-sample-space-probability/conditional.png)
 
 看上图，可以理解为在B事件发生的条件下，A事件发生的概率，记为：
 
@@ -64,18 +64,18 @@ $$ P(A|B) $$
 
 由上图可见，B空间中A发生的概率可以对应到全局空间中“A并且B发生的概率”的部分\\(P(AB)\\)：
 
-![]({{ site.url }}/assets/images/posts/machineLearning/2017-05-20-sample-space-probability/aandb.png)
+![]({{ site.url }}/assets/images/posts/machineLearning/概率论/2017-05-20-sample-space-probability/aandb.png)
 
 
 第二步，进入B空间。我们刚才处于全局空间，但是我们计算的是在B空间的情况，那么这一步就要进入B空间了。
 
 B空间比全局空间要小，进入B空间，相当于视场从远到近的拉近过程，B空间内的一切都变的**更大了**:
 
-![]({{ site.url }}/assets/images/posts/machineLearning/2017-05-20-sample-space-probability/zoomin.png)
+![]({{ site.url }}/assets/images/posts/machineLearning/概率论/2017-05-20-sample-space-probability/zoomin.png)
 
 那么，对于B空间内的一个子空间C，我们已经测量了它的体积占B空间的\\(c_b\%\\)。如果B空间占全局空间体积的*b%*，那么C空间在全局空间中的体积占比可以如下计算，也就是需要从B进入全局：\\(c\% = c_b\% \times b\% \\)：
 
-![]({{ site.url }}/assets/images/posts/machineLearning/2017-05-20-sample-space-probability/abc.png)
+![]({{ site.url }}/assets/images/posts/machineLearning/概率论/2017-05-20-sample-space-probability/abc.png)
 
 反过来，如果我们已知C在全局的体积，然后求C在B中的体积，就应该如下操作，也就是从全局进入B空间：\\(c_b\% = \dfrac {c\%} {b\%} \\)：
 
@@ -98,7 +98,7 @@ $$ P(A|B) = \dfrac {P(AB)} {P(B)} $$
 
 ### 全概率理论
 
-![]({{ site.url }}/assets/images/posts/machineLearning/2017-05-20-sample-space-probability/total.png)
+![]({{ site.url }}/assets/images/posts/machineLearning/概率论/2017-05-20-sample-space-probability/total.png)
 
 看上图来理解，全局空间划分为\\(A_1\\), \\(A_2\\), \\(A_3\\),..., \\(A_n\\)这些子空间，我们想要求阴影区域B的概率（面积）。如果B在各个子空间的面积容易求得的话，那么B的面积完全可以变为B在各个子空间的面积的和。转换为概率公式就变成了：
 
@@ -118,6 +118,12 @@ $$ P(B) = P(A_1)P(B | A_1) + P(A_2)P(B | A_2) + P(A_3) P( B |A_3) $$
 根据条件概率公式我们可以得出这个计算公式：
 
 $$ P(A_3 | B) = \dfrac {P(A_3B)} {P(B)}$$
+
+$$ P(A_3 | B) = \dfrac {P(B|A_3)P(A_3)} {P(B)}$$
+
+下图更清楚显示这个过程:
+
+![]({{ site.url }}/assets/images/posts/machineLearning/概率论/2017-05-20-sample-space-probability/bey.png)
 
 然后根据全概率公式，又可以变为：
 
@@ -146,7 +152,7 @@ $$ P(A_3 | B) = \dfrac {P(A_3)P(B|A_3)} {P(A_1)P(B | A_1) + P(A_2)P(B | A_2) + P
 
 我们自己可以根据贝叶斯公式计算，真正的误诊率其实很高。这里我就不计算了，画图说明这个问题：
 
-![]({{ site.url }}/assets/images/posts/machineLearning/2017-05-20-sample-space-probability/ill.png)
+![]({{ site.url }}/assets/images/posts/machineLearning/概率论/2017-05-20-sample-space-probability/ill.png)
 
 根据上图，很容易看出，就算检测有病，很大可能也是没病的。
 
@@ -160,6 +166,6 @@ $$ P(A_3 | B) = \dfrac {P(A_3)P(B|A_3)} {P(A_1)P(B | A_1) + P(A_2)P(B | A_2) + P
 
 * 条件独立性。看下图，假设全局中，A，B互斥，那么如果得知C事件发生了，A，B还独立吗？在C空间，A，B互斥，所以他们在C空间不独立。
 
-![]({{ site.url }}/assets/images/posts/machineLearning/2017-05-20-sample-space-probability/conditional_independent.png)
+![]({{ site.url }}/assets/images/posts/machineLearning/概率论/2017-05-20-sample-space-probability/conditional_independent.png)
 
 * 根据上面例子，我们可以得出另一个小技巧：韦恩图不能看出来是否独立，但是可以看出来不独立。（你能看出来这个小技巧吗？）

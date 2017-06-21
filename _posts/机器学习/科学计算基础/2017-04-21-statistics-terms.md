@@ -30,7 +30,7 @@ author: Geng
 * 第二四分位数 (Q2)，又称“中位数”，等于该样本中所有数值由小到大排列后第50%的数字。
 * 第三四分位数 (Q3)，又称“上四分位数”，等于该样本中所有数值由小到大排列后第75%的数字。
 
-![]({{ site.url }}/assets/images/posts/machineLearning/2017-04-21-statistics-terms/quartiles.gif)
+![]({{ site.url }}/assets/images/posts/machineLearning/科学计算基础/2017-04-21-statistics-terms/quartiles.gif)
 
 第三四分位数与第一四分位数的差距又称四分位距（InterQuartile Range, IQR）。
 

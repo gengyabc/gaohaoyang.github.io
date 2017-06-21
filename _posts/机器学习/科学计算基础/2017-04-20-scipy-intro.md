@@ -86,7 +86,7 @@ plt.show()
 ```
 
 
-![]({{ site.url }}/assets/images/posts/machineLearning/2017-04-20-scipy-intro/output_5_0.png)
+![]({{ site.url }}/assets/images/posts/machineLearning/科学计算基础/2017-04-20-scipy-intro/output_5_0.png)
 
 
 
@@ -184,7 +184,7 @@ plt.show()
 ```
 
 
-![]({{ site.url }}/assets/images/posts/machineLearning/2017-04-20-scipy-intro/output_15_0.png)
+![]({{ site.url }}/assets/images/posts/machineLearning/科学计算基础/2017-04-20-scipy-intro/output_15_0.png)
 
 
 ### scipy.stats
@@ -212,7 +212,7 @@ plt.show()
 ```
 
 
-![]({{ site.url }}/assets/images/posts/machineLearning/2017-04-20-scipy-intro/output_17_0.png)
+![]({{ site.url }}/assets/images/posts/machineLearning/科学计算基础/2017-04-20-scipy-intro/output_17_0.png)
 
 
 如果我们知道一个随机过程符合正态分布，我们可以通过拟合来估计参数：
