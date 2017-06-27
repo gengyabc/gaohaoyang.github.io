@@ -16,12 +16,11 @@ author: Geng
 
 
 
-\\(X_1\\), \\(X_2\\) ... 为独立的同分布的随机变量序列, 其分部均值为 \\(\mu\\) , 方差为 \\(\sigma^2\\), 我们定义:
+\\(X_1\\), \\(X_2\\) ... 为独立的同分布的随机变量序列, 其分布均值为 \\(\mu\\) , 方差为 \\(\sigma^2\\), 我们定义:
 
 $$ S_n = X_1 + ... + X_n $$
 
-为这个随机变量序列前 *n* 项之和.
-
+为这个随机变量序列前 *n* 项之和, 那么当n趋近无穷的时候, 会发生什么呢?
 
 首先可知:
 
@@ -36,17 +35,32 @@ $$ var(S_n) = var(X_1) + ... + var(X_n) = n \sigma^2 $$
 不过呢, 如果我们计算 \\(M_n = \frac {S_n} {n} \\) 呢?, 显然:
 
 $$ E[M_n] = \mu $$
+
 $$ var(M_n) = \frac {\sigma^2} {n} $$
 
 那么, 我们的任务就是研究一下这个 \\(M_n\\) 的性质.
 
+
+## 什么是 \\(M_n\\)
+
+首先, \\(M_n\\) 其实就是独立同分布的随机变量序列的**样本均值**:
+
+> 样本就是总体的一部分, 不是总体
+
+那么大数定律要研究的内容, 其实就是这个样本均值的问题.
+
+这个样本均值本身是一个随机变量, 它的标准差称为**标准误差(SE)**. 注意用词不同.
+
+> 看英文加深理解: The **standard deviation**(标准差) of sample means is known as the **standard error**(标准误差) of the mean (SE).
+
+$$ SE = \frac {\sigma} {\sqrt n} $$
 
 ## 切比雪夫不等式
 首先要明确, 上面所说的:
 
 $$ S_n = X_1 + ... + X_n $$
 
-只是一个随机变量序列的**一部分**, 而不是全部. 那么我们研究的其实是这个**一部分**将会如何近似全部. 
+只是一个随机变量序列的**一部分**, 也就是**样本**. 那么我们研究的其实是**样本**将会如何近似总体. 
 
 切比雪夫不等式告诉我们:
 
@@ -59,7 +73,7 @@ $$ P(|X - \mu | \geq c) \leq \frac {\sigma^2}{c^2}  $$
 ## 弱大数定律
 独立同分布的随机变量序列的**样本均值**, 在大样本的情况下, 有很大概率与随机变量的均值接近.
 
-> 样本就是全部的一部分, 不是全部
+> 再次强调, 样本就是总体的一部分, 不是总体
 
 样本均值:
 
@@ -67,7 +81,7 @@ $$ M_n = \frac {X_1 + ... + X_n} {n} $$
 
 根据切比雪夫不等式, 结合其期望与方差, 可知:
 
-$$ P(|M_n - \mu | \geq \epsilon) \leq \frac {\sigma^2}{n \epsilon^2}  $$
+$$ P(|M_n - \mu | \geq \epsilon) \leq \frac {\sigma^2}{n \epsilon^2} = \frac {SE^2} {\epsilon^2} $$
 
 
 上面不等式可以理解为：当 *n* 充分大时，\\(M_n\\) 的分布主要集中在 \\(\mu\\) 附近。 这个就是**弱大数定律**。
@@ -94,6 +108,10 @@ $$ P(|M_n - p | \geq \epsilon) \leq \frac {1}{4n \epsilon^2}  $$
 根据上面的讨论，\\(S_n = X_1 + ... + X_n = nM_n\\) 的方差发散，其分布不收敛。考虑到 \\(E[S_n] = n\mu\\), \\(var(S_n) = n\sigma^2\\),
 
 $$ Z_n = \frac {X_1 + ... +X_n - n\mu} {\sqrt {n} \sigma} $$
+
+
+$$ Z_n = \frac {(X_1 + ... +X_n)/n - \mu} {\frac {\sigma} {\sqrt {n}}} = \frac {M_n - \mu} {SE} $$
+
 
 $$ E[Z_n] = 0, \ \ \ var(Z_n) = 1 $$
 
@@ -126,10 +144,10 @@ $$ P(Z_n \leq \frac {\epsilon} {\sqrt n \sigma}) = \Phi (z) $$
 当 \\( p = 1/2\\) 时，标准差 \\(\sqrt n \sigma\\ = \sqrt {n p(p-1)})\\) 达到最大值 \\(\sqrt {1/4n}\\), 那么 \\(\frac {\epsilon} {\sqrt n \sigma}\\) 达到最小值 \\(2 \epsilon \sqrt{n}\\)，那么：
 
 $$ P(|M_n - p | \geq \epsilon) 
-    \approx 2P(Z_n \geq \frac {\epsilon} {\sqrt n \sigma}) 
-    \leq 2P(Z_n \geq \sqrt {\frac 1 {4n}})
-   = 2 - 2P(Z_n \leq \sqrt {\frac 1 {4n}}) 
-   = 2- 2\Phi (z)
+\approx 2P(Z_n \geq \frac {\epsilon} {\sqrt n \sigma}) 
+\leq 2P(Z_n \geq \sqrt {\frac 1 {4n}})
+= 2 - 2P(Z_n \leq \sqrt {\frac 1 {4n}}) 
+= 2- 2\Phi (z)
 $$
 
 在估计值与真实值差距为 0.01之内的概率是 0.95 的话， 样本只需要大约 10000 个， 比使用切比雪夫不等式要少。

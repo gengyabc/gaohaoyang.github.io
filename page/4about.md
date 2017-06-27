@@ -29,6 +29,10 @@ type: page
 
 修改中
 
+## 公众号
+关于金融，心理等方面的科普
+
+![]({{ site.url }}/assets/images/qrcode.jpg)
 
 ## 友情链接
 

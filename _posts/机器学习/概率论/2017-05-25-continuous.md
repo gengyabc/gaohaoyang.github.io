@@ -59,7 +59,7 @@ $$ F_X(x) = p(X \leq x) = \sum_{ k \leq x }P_X(k)  $$
 ## 正态分布(normal distribution)
 又名高斯分布(Gaussian distribution), 概率密度函数为:
 
-$$ f_X(x) = \dfrac{1}{\sqrt {2\pi }\sigma }e^{ - \dfrac{(x-\mu)^2}{2\epsilon^2}} $$
+$$ f_X(x) = \dfrac{1}{\sqrt {2\pi }\sigma }e^{ - \dfrac{(x-\mu)^2}{2\sigma^2}} $$
 
 
 可以证明: \\( E[X] = \mu \\), \\( var(X) = \sigma^2 \\)
