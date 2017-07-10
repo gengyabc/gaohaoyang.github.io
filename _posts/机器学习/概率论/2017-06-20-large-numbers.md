@@ -135,16 +135,16 @@ $$ P(|M_n - p | \geq \epsilon) \approx 2P(M_n - p \leq \epsilon)  $$
 
 这里如果根据中心极限定理计算， 当 *n* 很大时，根据 \\(M_n\\) 的期望和方差：
 
-$$ Z_n = \frac {M_n - p} {\sqrt n \sigma}  $$
+$$ Z_n = \frac {M_n - p} {SE}  $$
 
-$$ P(Z_n \leq \frac {\epsilon} {\sqrt n \sigma}) = \Phi (z) $$
+$$ P(Z_n \leq \frac {\epsilon} {SE}) = \Phi (z) $$
 
 那么， 我们需要知道 *z* 是多少。 显然这个时候我们需要知道 *p* 是多少才可以计算 *z*。 我们无法预知 *p*，怎么办？
 
-当 \\( p = 1/2\\) 时，标准差 \\(\sqrt n \sigma\\ = \sqrt {n p(p-1)})\\) 达到最大值 \\(\sqrt {1/4n}\\), 那么 \\(\frac {\epsilon} {\sqrt n \sigma}\\) 达到最小值 \\(2 \epsilon \sqrt{n}\\)，那么：
+当 \\( p = 1/2\\) 时，标准误差 \\( SE = \sqrt { \frac {p(p-1)} {n}} \\) 达到最大值 \\(\sqrt { \frac 1 {4n}}\\), 那么 \\(\frac {\epsilon} {SE}\\) 达到最小值 \\(2 \epsilon \sqrt{n}\\)，那么：
 
 $$ P(|M_n - p | \geq \epsilon) 
-\approx 2P(Z_n \geq \frac {\epsilon} {\sqrt n \sigma}) 
+\approx 2P(Z_n \geq \frac {\epsilon} {SE}) 
 \leq 2P(Z_n \geq \sqrt {\frac 1 {4n}})
 = 2 - 2P(Z_n \leq \sqrt {\frac 1 {4n}}) 
 = 2- 2\Phi (z)
