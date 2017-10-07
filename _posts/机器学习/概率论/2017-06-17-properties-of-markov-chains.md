@@ -2,7 +2,7 @@
 layout: post
 title:  "概率论 10. 马尔科夫链的性质"
 categories: 概率论
-tags:  理论
+tags:  数学
 author: Geng
 ---
 

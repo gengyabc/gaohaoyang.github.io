@@ -2,7 +2,7 @@
 layout: post
 title:  "概率论 9. 离散马尔科夫链"
 categories: 概率论
-tags:  理论
+tags:  数学
 author: Geng
 ---
 

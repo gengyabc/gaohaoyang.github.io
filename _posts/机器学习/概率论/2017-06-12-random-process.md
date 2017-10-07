@@ -2,7 +2,7 @@
 layout: post
 title:  "概率论 6. 随机过程"
 categories: 概率论
-tags:  理论
+tags:  数学
 author: Geng
 ---
 

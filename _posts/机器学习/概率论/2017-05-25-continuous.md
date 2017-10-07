@@ -2,7 +2,7 @@
 layout: post
 title:  "概率论 4. 连续随机变量"
 categories: 概率论
-tags:  理论
+tags:  数学
 author: Geng
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title:  "概率论 2. 排列组合"
 categories: 概率论
-tags:  理论
+tags:  数学
 author: Geng
 ---
 

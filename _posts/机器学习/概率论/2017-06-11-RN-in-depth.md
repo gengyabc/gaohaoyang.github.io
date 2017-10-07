@@ -2,7 +2,7 @@
 layout: post
 title:  "概率论 5. 随机变量的深入内容"
 categories: 概率论
-tags:  理论
+tags:  数学
 author: Geng
 ---
 
