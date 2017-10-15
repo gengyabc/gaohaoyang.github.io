@@ -21,15 +21,14 @@ author: Geng
 ## 洗脑
 
 ### 二元一次方程
+
 这个方程:
 
 $$
-\begin{equation}
-\begin{cases} 
-    2x - y = 0 \\
-    -x + 2y = 3
-\end{cases} 
-\end{equation}
+\begin{equation} \begin{cases} 
+2x - y = 0 \\
+-x + 2y = 3
+\end{cases} \end{equation}
 $$
 
 写成矩阵形式:
@@ -37,27 +36,26 @@ $$
 $$
 \begin{equation}
 \begin{bmatrix}
-        2 & -1 \\
-        -1 & 2  
-    \end{bmatrix}
-    \begin{bmatrix}
-        x \\
-        y
-    \end{bmatrix}
-        =
-    \begin{bmatrix}
-        0 \\
-        3
-    \end{bmatrix}
+2 & -1 \\
+-1 & 2  
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 \\
+3
+\end{bmatrix}
 \end{equation}
 $$
 
-我们可以将这个矩阵形式看成 $系数矩阵 \times 未知向量 = 结果向量$
+我们可以将这个矩阵形式看成 \\(系数矩阵 \times 未知向量 = 结果向量\\)
 
 ### 行图像
 
 我们知道, 方程组(1)可以在平面中画出两个直线:
-
 ![]({{ site.url }}/assets/images/posts/machineLearning/线性代数/2017-10-07-brain-wash/row.png)
 
 未知向量就是这两条直线的交点.
@@ -68,21 +66,21 @@ $$
 
 $$
 \begin{equation}
-    x
-    \begin{bmatrix}
-        2  \\
-        -1  \\
-    \end{bmatrix}
-    +y
-    \begin{bmatrix}
-        -1  \\
-        2  
-    \end{bmatrix}
-    =
-    \begin{bmatrix}
-        0 \\
-        3
-    \end{bmatrix}
+x
+\begin{bmatrix}
+2  \\
+-1  \\
+\end{bmatrix}
++y
+\begin{bmatrix}
+-1  \\
+2  
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 \\
+3
+\end{bmatrix}
 \end{equation}
 $$
 
@@ -103,8 +101,8 @@ $$
 
 $$
 \begin{equation} \begin{cases} 
- 2x - y = 0 \\
- -x + 2y -z = -1 \\
+2x - y = 0 \\
+-x + 2y -z = -1 \\
 -3y + 4z = 4
 \end{cases} \end{equation}
 $$
@@ -116,30 +114,30 @@ $$
 
 $$
 \begin{equation}
-    x
-    \begin{bmatrix}
-        2  \\
-        -1  \\
-        0
-    \end{bmatrix}
-    +y
-    \begin{bmatrix}
-        -1  \\
-        2  \\
-        -3
-    \end{bmatrix}
-    +z
-    \begin{bmatrix}
-        0  \\
-        -1  \\
-        4
-    \end{bmatrix}
-    =
-    \begin{bmatrix}
-        0 \\
-        -1 \\
-        4
-    \end{bmatrix}
+x
+\begin{bmatrix}
+2  \\
+-1  \\
+0
+\end{bmatrix}
++y
+\begin{bmatrix}
+-1  \\
+2  \\
+-3
+\end{bmatrix}
++z
+\begin{bmatrix}
+0  \\
+-1  \\
+4
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 \\
+-1 \\
+4
+\end{bmatrix}
 \end{equation}
 $$
 
@@ -152,11 +150,11 @@ $$
 ### 线性组合
 现在考虑这个问题:
 
-* 对于 \\(\vec{A}\vec{X}=\vec{b}\\) , 任取一个 \\(\vec{b}\\) 都会有解吗?
+* 对于 \\(\mathbf{A}\vec{X}=\vec{b}\\) , 任取一个 \\(\vec{b}\\) 都会有解吗?
 
 或者这样考虑这个问题:
 
-* \\(\vec{A}\\) 的各种线性组合, 可以填满整个三维空间吗?
+* \\(\mathbf{A}\\) 的各种线性组合, 可以填满整个三维空间吗?
 
 对于上面的例子是可以的, 但是有的情况就不行. 比如三个列向量如果都在一个平面内, 那就没办法填满这个三维空间了. 
 
@@ -173,7 +171,7 @@ $$
 
 假设 \\(\vec{v}=(v_1, v_2)\\), \\(\vec{w}=(w_1, w_2)\\), 他们的夹角为\\(\theta\\):
 \begin{equation}
- \vec{v} \cdot \vec{w} = v_1 w_1 + v_2 w_2 = ||\vec{v}|| \cdot ||\vec{w}|| \cdot cos\theta
+\vec{v} \cdot \vec{w} = v_1 w_1 + v_2 w_2 = ||\vec{v}|| \cdot ||\vec{w}|| \cdot cos\theta
 \end{equation}
 
 ### Python 计算
@@ -193,7 +191,7 @@ u
 
 
 
-    array([ 7,  9, 11])
+array([ 7,  9, 11])
 
 
 
@@ -207,7 +205,7 @@ u
 
 
 
-    9
+9
 
 
 
@@ -220,27 +218,27 @@ $$
 \begin{equation}
 c
 \begin{bmatrix}
- 1 \\
- -1 \\
- 0 
+1 \\
+-1 \\
+0 
 \end{bmatrix}
 +d
 \begin{bmatrix}
- 0 \\
- 1 \\
- -1 
+0 \\
+1 \\
+-1 
 \end{bmatrix}
 +e
 \begin{bmatrix}
- 0 \\
- 0 \\
- 1 
+0 \\
+0 \\
+1 
 \end{bmatrix}
 =
 \begin{bmatrix}
- c \\
- d-c \\
- e-d 
+c \\
+d-c \\
+e-d 
 \end{bmatrix}
 \end{equation}
 $$
@@ -261,9 +259,9 @@ e
 \end{bmatrix}
 =
 \begin{bmatrix}
- c \\
- d-c \\
- e-d 
+c \\
+d-c \\
+e-d 
 \end{bmatrix}
 \end{equation}
 $$
@@ -272,7 +270,7 @@ $$
 
 $$
 \begin{equation}
-\vec{A}\vec{x}=
+\mathbf{A}\vec{x}=
 \begin{bmatrix}
 \vec{u} & \vec{v} & \vec{w}
 \end{bmatrix}
@@ -296,11 +294,11 @@ $$
 import numpy as np
 
 A = np.array([[1, 2, 3],
-              [2, 5, 2],
-              [6, -3, 1]])
+[2, 5, 2],
+[6, -3, 1]])
 x = np.array([[0],
-              [0],
-              [2]])
+[0],
+[2]])
 
 b = np.dot(A, x)
 b
@@ -309,8 +307,9 @@ b
 
 
 
-    array([[6],
-           [4],
-           [2]])
+array([[6],
+[4],
+[2]])
+
 
 

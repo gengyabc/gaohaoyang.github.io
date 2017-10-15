@@ -42,7 +42,7 @@ $$
 \begin{equation}
 \begin{cases} 
 x &-&2y &= 1 \\
-  & &8y &= 8
+& &8y &= 8
 \end{cases}
 \end{equation}
 $$
@@ -55,13 +55,13 @@ $$
 
 $$
 \begin{equation} \begin{cases} 
- x + 2y + z = 2 \\
- 3x + 8y + z = 12 \\
- 4y + z = 2
+x + 2y + z = 2 \\
+3x + 8y + z = 12 \\
+4y + z = 2
 \end{cases} \end{equation}
 $$
 
-写为矩阵 \\(\vec{A} \vec{x} = \vec{b} \\) 的形式:
+写为矩阵 \\(\mathbf{A} \vec{x} = \vec{b} \\) 的形式:
 
 $$
 \begin{equation}
@@ -86,7 +86,7 @@ $$
 
 ### 主元
 
-我们将注意力集中到系数矩阵 \\(\vec{A}\\), 其中左上角的 *1* 是消元法的第一个**主元**(Pivot 1).
+我们将注意力集中到系数矩阵 \\(\mathbf{A}\\), 其中左上角的 *1* 是消元法的第一个**主元**(Pivot 1).
 
 > 主元: 使用消元法的行的第一个非零元素
 
@@ -112,11 +112,11 @@ $$
 
 上面的 \\((2,1)\\) 是标记要消去的是第二行第一列的那一项.
 
-然后类似的方法, 消去第二个主元, 得到一个上三角矩阵\\(U\\):
+然后类似的方法, 消去第二个主元, 得到一个上三角矩阵\\(\mathbf{U}\\):
 
 $$
 \begin{equation}
-U=
+\mathbf{U}=
 \begin{bmatrix}
 1 & 2 & 1 \\
 0 & 2 & -2 \\
@@ -138,7 +138,7 @@ $$
 \end{equation}
 $$
 
-也就是将矩阵 \\(\vec{A}\\) 和向量 \\(\vec{b}\\) 拼接起来的矩阵. 在使用消元法求解的时候, 使用增广矩阵就可以方便的求解:
+也就是将矩阵 \\(\mathbf{A}\\) 和向量 \\(\vec{b}\\) 拼接起来的矩阵. 在使用消元法求解的时候, 使用增广矩阵就可以方便的求解:
 
 $$
 \begin{equation}
@@ -170,7 +170,7 @@ $$
 
 上次内容已经介绍过行图像和列图像的内容. 这里再强调一下.
 
-\\(\vec{A} \times \overrightarrow{列向量x}\\) 产生一个列向量. 新产生的列向量的每一项是 \\(\vec{A}\\) 的列在 \\(\overrightarrow{列向量x}\\) 作用下的线性组合
+\\(\mathbf{A} \times \overrightarrow{列向量x}\\) 产生一个列向量. 新产生的列向量的每一项是 \\(\mathbf{A}\\) 的列在 \\(\overrightarrow{列向量x}\\) 作用下的线性组合
 
 $$
 \begin{equation}
@@ -200,7 +200,7 @@ $$
 
 ![]({{ site.url }}/assets/images/posts/machineLearning/线性代数\2017-10-08-elimination\col_mul.png)
 
-\\(\overrightarrow{行向量x} \times \vec{A}\\) 产生一个行向量. 新产生的行向量的每一项是 \\(\vec{A}\\) 的行在 \\(\overrightarrow{行向量x}\\) 作用下的线性组合
+\\(\overrightarrow{行向量x} \times \mathbf{A}\\) 产生一个行向量. 新产生的行向量的每一项是 \\(\mathbf{A}\\) 的行在 \\(\overrightarrow{行向量x}\\) 作用下的线性组合
 
 
 $$
@@ -260,13 +260,13 @@ col1 & col2 & col3
 0  \\
 0 
 \end{bmatrix} + 4 \times \begin{bmatrix}
- 0  \\
- 1  \\
- 0 
+0  \\
+1  \\
+0 
 \end{bmatrix} + 5 \times \begin{bmatrix}
- 0 \\
- 0 \\
- 1
+0 \\
+0 \\
+1
 \end{bmatrix}
 =
 \begin{bmatrix}
@@ -281,7 +281,7 @@ $$
 
 ![]({{ site.url }}/assets/images/posts/machineLearning/线性代数\2017-10-08-elimination\col.png)
 
-列向量乘以这个特殊的矩阵后没有发生变化, 这个特殊的矩阵就是**单位矩阵**, 记为 \\(\vec{I}\\). 同样, 行向量乘以单位矩阵也没有变化
+列向量乘以这个特殊的矩阵后没有发生变化, 这个特殊的矩阵就是**单位矩阵**, 记为 \\(\mathbf{I}\\). 同样, 行向量乘以单位矩阵也没有变化
 
 $$
 \begin{equation}
@@ -362,7 +362,7 @@ $$
 
 $$
 \begin{equation}
-\vec{E_{21}}\vec{A}=
+\mathbf{E_{21}}\mathbf{A}=
 \begin{bmatrix}
 1 & 0 & 0 \\
 -3 & 1 & 0 \\
@@ -386,7 +386,7 @@ $$
 
 $$
 \begin{equation}
-\vec{E_{32}}\vec{E_{21}}\vec{A}=
+\mathbf{E_{32}}\mathbf{E_{21}}\mathbf{A}=
 \begin{bmatrix}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
@@ -408,22 +408,22 @@ $$
 0 & 2 & -2 \\
 0 & 0 & 5
 \end{bmatrix}
-= \vec{U}(上三角矩阵)
+= \mathbf{U}(上三角矩阵)
 \end{equation}
 $$
 
-将 \\(\vec{E_{32}}\vec{E_{21}}\\) 看做一个向量 \\(\vec{E}\\), 这个就是**消元矩阵**
+将 \\(\mathbf{E_{32}}\mathbf{E_{21}}\\) 看做一个向量 \\(\mathbf{E}\\), 这个就是**消元矩阵**
 
 ## 逆矩阵
 
-我们刚才考虑的是怎样通过消元矩阵, 使得 \\(\vec{A}\\) 变成 \\(\vec{U}\\). 那么如何使得 \\(\vec{E}\\) 变成 \\(\vec{A}\\) 呢?
+我们刚才考虑的是怎样通过消元矩阵, 使得 \\(\mathbf{A}\\) 变成 \\(\mathbf{U}\\). 那么如何使得 \\(\mathbf{E}\\) 变成 \\(\mathbf{A}\\) 呢?
 
 根据 式(9) ~ (12), 我们应该可以归纳出:
 
 * 左乘变换矩阵行变换
 * 右乘变换矩阵列变换
 
-那我们现在就考虑一个 \\(\vec{E_{21}}\\) 复原的问题. 它的作用是第二行减去第一行的三倍, 那么其反作用就是第二行加上第一行的三倍
+那我们现在就考虑一个 \\(\mathbf{E_{21}}\\) 复原的问题. 它的作用是第二行减去第一行的三倍, 那么其反作用就是第二行加上第一行的三倍
 
 $$
 \begin{equation}
@@ -449,8 +449,8 @@ $$
 
 $$
 \begin{equation}
-\vec{E_{21}^{-1}}\vec{E_{21}} =\vec{I}
+\mathbf{E_{21}^{-1}}\mathbf{E_{21}} =\mathbf{I}
 \end{equation}
 $$
 
-这个 \\(\vec{E_{21}^{-1}}\\) 就是 \\(\vec{E_{21}^{-1}}\\) 的逆矩阵了.
+这个 \\(\mathbf{E_{21}^{-1}}\\) 就是 \\(\mathbf{E_{21}^{-1}}\\) 的逆矩阵了.
