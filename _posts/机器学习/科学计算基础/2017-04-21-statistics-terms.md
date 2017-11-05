@@ -2,7 +2,7 @@
 layout: post
 title:  "科学计算附录 - 统计术语及图形展示"
 categories: 科学计算
-tags:  理论
+tags:  数学
 author: Geng
 ---
 
@@ -50,7 +50,14 @@ John Tukey（箱线图发明人）提供了两种异常值的定义：
 
 如果有上面的任何一种异常值，箱线图的胡须末端为异常值截断点，称为內限（inner fence），位置是Q3+1.5×IQR（和Q1－1.5×IQR），对应疑似异常值用空心圆圈表示。类似的，外限（outer fence）是位于3×IQR处，对应异常值用实心远点表示。
 
+> 可以发现图的下限并没有到达 Q1－1.5×IQR, 这是因为再往下已经没有数据了, 所以画到这里即可
+
 ![](http://www.physics.csbsju.edu/stats/complex.box.defs.gif)
+
+箱线图可以简单理解为: 想象箱子是人的身体, 伸出的线是胳膊. 胳膊有限长度(1.5IQR), 想要包住尽可能多的东西. 如果东西没有那么多, 也没有必要非要伸到最长
+
+![]({{ site.url }}/assets/images/posts/machineLearning/科学计算基础/2017-04-21-statistics-terms/body.png)
+
 
 ## 相关(correlation)
 相关（Correlation，或称相关系数或关联系数），显示两个随机变量之间线性关系的强度和方向。在统计学中，相关的意义是用来衡量两个变量相对于其相互独立的距离。在这个广义的定义下，有许多根据数据特点而定义的用来衡量数据相关的系数。

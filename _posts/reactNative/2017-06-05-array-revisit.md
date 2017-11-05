@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "JavaScript 5. 数组再探"
-categories: ReactNative
+categories: JavaScript
 tags:  JavaScript  
 author: Geng
 ---

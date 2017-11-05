@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "JavaScript 10. 对象 -- 继承"
-categories: ReactNative
+categories: JavaScript
 tags:  JavaScript  
 author: Geng
 ---
