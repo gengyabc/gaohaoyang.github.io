@@ -106,7 +106,7 @@ console.log(upperCase);
 
 
 ```javascript
-["Bilbo", "Gandalf", "Nazgul"].map( item => console.log(item.toUpperCase()) );
+["Bilbo", "Gandalf", "Nazgul"].forEach( item => console.log(item.toUpperCase()) );
 ```
 
     BILBO
@@ -117,7 +117,7 @@ console.log(upperCase);
 
 
 
-    [ undefined, undefined, undefined ]
+    undefined
 
 
 
