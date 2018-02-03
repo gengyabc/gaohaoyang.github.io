@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "09. 线性相关性、基、维数"
+title:  "线性代数 9 - 线性相关性、基、维数"
 categories: 线性代数
 tags:  数学
 mathjax: true

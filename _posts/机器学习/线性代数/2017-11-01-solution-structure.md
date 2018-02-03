@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "08. 求解 Ax=b 可解性和解的结构"
+title:  "线性代数 8 - 求解 Ax=b 可解性和解的结构"
 categories: 线性代数
 tags:  数学
 mathjax: true
