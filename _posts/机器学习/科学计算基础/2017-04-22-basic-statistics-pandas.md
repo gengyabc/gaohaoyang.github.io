@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "科学计算7 - Python在统计学的应用"
+title:  "科学计算10 - Python在统计学的应用"
 categories: 科学计算
 tags:  Pandas Statsmodels 
 author: Geng

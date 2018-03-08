@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "科学计算5 - Matplotlib画图"
+title:  "科学计算7 - Matplotlib"
 categories: 科学计算
 tags:  Matplotlib
 author: Geng
@@ -9,12 +9,11 @@ author: Geng
 * content
 {:toc}
 
-
 **Matplotlib**可能会是你从Matlab转向Python进行科学计算的决定因素，因为它与Jupyter结合真的是太好用了。它不仅带给你快速可视化数据的方法，还提供高质量的图表。
 
 为了使用Matplotlib，在Jupyter笔记本所有代码之前，加一句`%matplotlib inline`，就可以开始使用了。
 
-本文主要取材于[此教程](file:///Users/gengyu/Downloads/scipy-lectures-scipy-lectures.github.com-465c16a/intro/matplotlib/index.html)
+
 
 
 
@@ -52,7 +51,7 @@ plt.show()
 ```
 
 
-![]({{ site.url }}/assets/images/posts/machineLearning/科学计算基础/2017-04-19-Matplotlib/output_5_0.png)
+![]({{ site.url }}/assets/images/posts/machineLearning/科学计算基础/2018-02-15-matplotlib/output_5_0.png)
 
 
 ### 直方图
@@ -65,7 +64,7 @@ plt.show()
 ```
 
 
-![]({{ site.url }}/assets/images/posts/machineLearning/科学计算基础/2017-04-19-Matplotlib/output_7_0.png)
+![]({{ site.url }}/assets/images/posts/machineLearning/科学计算基础/2018-02-15-matplotlib/output_7_0.png)
 
 
 ### 散点图
@@ -79,7 +78,7 @@ plt.show()
 ```
 
 
-![]({{ site.url }}/assets/images/posts/machineLearning/科学计算基础/2017-04-19-Matplotlib/output_9_0.png)
+![]({{ site.url }}/assets/images/posts/machineLearning/科学计算基础/2018-02-15-matplotlib/output_9_0.png)
 
 
 ## 画图设置
@@ -100,7 +99,7 @@ plt.show()
 ```
 
 
-![]({{ site.url }}/assets/images/posts/machineLearning/科学计算基础/2017-04-19-Matplotlib/output_11_0.png)
+![]({{ site.url }}/assets/images/posts/machineLearning/科学计算基础/2018-02-15-matplotlib/output_11_0.png)
 
 
 我们可以看到，上图已经有了很多设置，比如线型，颜色等，说明默认设置已经帮我们做了许多工作，那么这些默认设置怎么做的呢？我们将这些默认设置显式的写出来看下(颜色可能不够准确，不要太讲究哈)。
@@ -142,7 +141,7 @@ plt.show()
 ```
 
 
-![]({{ site.url }}/assets/images/posts/machineLearning/科学计算基础/2017-04-19-Matplotlib/output_13_0.png)
+![]({{ site.url }}/assets/images/posts/machineLearning/科学计算基础/2018-02-15-matplotlib/output_13_0.png)
 
 
 上面说有设置自己修改，可以观察变化，学习怎样设置
@@ -159,7 +158,7 @@ plt.show()
 ```
 
 
-![]({{ site.url }}/assets/images/posts/machineLearning/科学计算基础/2017-04-19-Matplotlib/output_15_0.png)
+![]({{ site.url }}/assets/images/posts/machineLearning/科学计算基础/2018-02-15-matplotlib/output_15_0.png)
 
 
 ### Figures和Subplots
