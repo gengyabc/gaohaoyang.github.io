@@ -2,7 +2,7 @@
 layout: post
 title:  "科学计算12 - Seaborn 入门"
 categories: 科学计算
-tags:  Pandas
+tags:  Seaborn
 author: Geng
 ---
 
